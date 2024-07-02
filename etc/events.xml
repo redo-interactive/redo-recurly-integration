@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Event observers configuration
+ *
+ * @copyright Copyright (c) 2024 Redo
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Observer for customer registration event -->
+    <event name="customer_register_success">
+        <observer name="recurly_create_account" instance="Redo\RecurlyIntegration\Observer\CustomerCreateObserver"/>
+    </event>
+</config>

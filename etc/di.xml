@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dependency Injection configuration
+ *
+ * @copyright Copyright (c) 2024 Redo
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Configure RecurlyAccount model with custom logger -->
+    <type name="Redo\RecurlyIntegration\Model\RecurlyAccount">
+        <arguments>
+            <argument name="logger" xsi:type="object">Redo\RecurlyIntegration\Logger\Logger</argument>
+        </arguments>
+    </type>
+
+    <!-- Define custom log handler -->
+    <virtualType name="Redo\RecurlyIntegration\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/recurly_integration.log</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Configure custom logger -->
+    <virtualType name="Redo\RecurlyIntegration\Logger\Logger" type="Monolog\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">recurlyIntegration</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Redo\RecurlyIntegration\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

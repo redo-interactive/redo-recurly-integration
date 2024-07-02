@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Default configuration values
+ *
+ * @copyright Copyright (c) 2024 Redo
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <recurly_integration>
+            <general>
+                <enabled>0</enabled>
+                <api_key backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+            </general>
+        </recurly_integration>
+    </default>
+</config>
