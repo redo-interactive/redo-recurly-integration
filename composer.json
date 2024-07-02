@@ -1,0 +1,27 @@
+{
+    "name": "redo/module-recurly-integration",
+    "description": "Magento 2 module for integrating with Recurly subscription management",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Redo Development Team",
+            "email": "robert@redo-interactive.com"
+        }
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "magento/framework": "^103.0",
+        "magento/module-customer": "^103.0",
+        "recurly/recurly-client": "^4.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Redo\\RecurlyIntegration\\": ""
+        }
+    }
+}
